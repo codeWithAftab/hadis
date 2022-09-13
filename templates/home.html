@@ -1,0 +1,34 @@
+{% extends 'base.html' %} {% block content %}
+<div class="container">
+  <form action="/hadis/" method="post">
+    {% csrf_token %}
+    <div class="row g-3 mt-5 d-flex justify-content-center">
+      <div class="col-md-6 mt-2">
+        <label for="hadistext">Enter Hadis in English</label>
+        <input
+          type="text"
+          id="hadistext"
+          name="hadisText"
+          class="form-control"
+          placeholder="enter hadis"
+          aria-label="First name"
+        />
+      </div>
+      <div class="col-md-3 mt-2">
+        <label for="Source">Enter the source...</label>
+        <input
+          type="text"
+          name="source"
+          class="form-control"
+          placeholder="Source"
+          aria-label="Last name"
+        />
+      </div>
+    </div>
+    <div class="col text-center mt-4">
+      <button type="submit" class="btn btn-success col-md-6">send</button>
+    </div>
+  </form>
+</div>
+
+{% endblock content %}
